@@ -1,0 +1,35 @@
+//{ Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+//} Driver Code Ends
+//User function template for C++
+class Solution{
+  public:
+    int MissingNumber(vector<int>& array, int n) {
+        // Your code goes here
+         int missing_num = n*(n+1)/2; // sum of n natural numbers
+        for(int i = 0; i < n-1; i++) {
+            missing_num -= array[i]; // subtract each element from the sum
+        }
+        return missing_num; // return the missing number
+    }
+};
+//{ Driver Code Starts.
+
+int main(){
+int t;
+cin >> t;
+while(t--) {
+int n;
+cin >> n;
+vector<int> array(n - 1);
+for(int i = 0; i < n; i++) cin >> array[i];
+Solution obj;
+cout << obj.MissingNumber(array, n) << "\n";
+}
+return 0;
+}
+//} Driver Code Ends
